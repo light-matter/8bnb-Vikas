@@ -15,7 +15,6 @@ app.use(express.static('../public'));
 app.get('/data/0', (req, res) => {
     axios.get('http://54.153.109.129:3000/data/1')
     .then((innerRes) => {
-      console.log(innerRes.data);
       res.json(innerRes.data);
     })
     .catch((err) => {console.log(err)})
