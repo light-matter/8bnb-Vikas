@@ -27,5 +27,14 @@ app.get('/homes', (req, res) => {
 });
 
 
+app.get('/spaces', (req, res) => {
+  axios.get('http://54.183.237.192:3001/homes')
+    .then((innerRes) => {
+      res.json(innerRes.data);
+    })
+    .catch((err) => { console.log(err) })
+});
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
