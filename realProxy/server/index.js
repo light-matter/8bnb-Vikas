@@ -27,8 +27,8 @@ app.get('/homes', (req, res) => {
 });
 
 
-app.get('/spaces', (req, res) => {
-  axios.get('http://54.183.237.192:3001/homes')
+app.get('/reservations/', (req, res) => {
+  axios.get('http://ec2-18-221-158-53.us-east-2.compute.amazonaws.com/reservations/')
     .then((innerRes) => {
       res.json(innerRes.data);
     })
