@@ -8,8 +8,6 @@ const port = 3001
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// console.log($);
-
 app.use(express.static('../public'));
 
 app.get('/data/0', (req, res) => {
