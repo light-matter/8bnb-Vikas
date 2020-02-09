@@ -13,12 +13,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('../public'));
 
 app.get('/data/0', (req, res) => {
-    axios.get('http://54.153.109.129:3000/data/1')
+  axios.get('http://54.153.109.129:3000/data/1')
     .then((innerRes) => {
       res.json(innerRes.data);
     })
-    .catch((err) => {console.log(err)})
-  });
+    .catch((err) => { console.log(err) })
+});
+
+app.get('/homes', (req, res) => {
+  axios.get('http://54.183.237.192:3001/homes')
+    .then((innerRes) => {
+      res.json(innerRes.data);
+    })
+    .catch((err) => { console.log(err) })
+});
 
 
 
